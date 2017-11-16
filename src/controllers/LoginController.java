@@ -45,7 +45,7 @@ public class LoginController implements ControllableScreen{
 
         failLabel.setVisible(false);
         //txtfldLogin.setText("");
-        txtfldLogin.setText("test");   //Auto-fill for testing todo remove before demo
+        //txtfldLogin.setText("test");   //Auto-fill for testing todo remove before demo
         passwordFieldPassword.setText("");
     }
 

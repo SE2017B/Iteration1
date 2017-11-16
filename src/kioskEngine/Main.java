@@ -55,20 +55,18 @@ public class Main extends Application {
         mainDatabase.readEdgesCSV("MapHedges.csv");
         mainDatabase.readEdgesCSV("MapWedges.csv");
 
-        Staff testAdmin =  new Staff("test","","Admin","Admin Test",1234, engine.getService("Food"));
-        Staff testStaff =  new Staff("testStaff","","food stuff","Staff Test",1234, engine.getService("Food"));
+        Staff Bob =  new Staff("BRoss","pass","Admin","Bob Ross",1234, engine.getService("Food"));
+        Staff Nick =  new Staff("NCage","pass","Cook","Nick Cage",66478, engine.getService("Food"));
+        Staff Gordan =  new Staff("GRamsay","pass","BusBoy","Gordan Ramsay",5445, engine.getService("Food"));
 
-        engine.addStaffLogin(testStaff, "Food");
-        engine.addStaffLogin(testAdmin, "Food");
-
+        engine.addStaffLogin(Bob, "Food");
+        engine.addStaffLogin(Nick, "Food");
+        engine.addStaffLogin(Gordan, "Food");
 
 
         for(Node node : mainDatabase.getNodes()){
             engine.getMap().addNode(node.getID(),node);
         }
-
-        ServiceRequest req = new ServiceRequest(engine.getService("Food"),1,engine.getMap().getNodesForSearch().get(0),"This is a test");
-        req.giveRequest();
 
         launch(args);
 
